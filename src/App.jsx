@@ -1,7 +1,9 @@
 import "./App.css";
+import Characters from "./components/characters";
 
 function App() {
-  return <></>;
+  return <>
+  <Characters></Characters></>;
 }
 
 export default App;
