@@ -1,10 +1,10 @@
 import "./App.css";
-import SortByRole from "./components/SortBy/role";
+import SelectCharacter from "./components/selectCharacter";
 
 function App() {
   return (
     <>
-      <SortByRole></SortByRole>
+      <SelectCharacter></SelectCharacter>
     </>
   );
 }
