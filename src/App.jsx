@@ -1,7 +1,12 @@
 import "./App.css";
+import SelectCharacter from "./components/selectCharacter";
 
 function App() {
-  return <></>;
+  return (
+    <>
+      <SelectCharacter></SelectCharacter>
+    </>
+  );
 }
 
 export default App;
