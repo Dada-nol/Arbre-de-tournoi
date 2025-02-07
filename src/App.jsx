@@ -1,9 +1,12 @@
 import "./App.css";
-import Characters from "./components/characters";
+import Sort from "./components/sort";
 
 function App() {
-  return <>
-  <Characters></Characters></>;
+  return (
+    <>
+      <Sort></Sort>
+    </>
+  );
 }
 
 export default App;

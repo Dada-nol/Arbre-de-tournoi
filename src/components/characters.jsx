@@ -1,6 +1,7 @@
+import PropTypes from "prop-types";
 import { useEffect, useState } from "react";
 
-function Characters() {
+function Characters(props) {
   // https://ddragon.leagueoflegends.com/cdn/13.1.1/data/en_US/champion.json
   // https://ddragon.leagueoflegends.com/api/versions.json
   const [champions, setChampions] = useState([]);
@@ -58,115 +59,25 @@ function Characters() {
 
   return (
     <>
-      <div className="champion_assassin">
-        <h2>Assassin</h2>
-
-        {champions.map((champ, index) => {
-          if (champ.tags.includes("Assassin")) {
-            return (
-              <button key={index}>
-                <img
-                  src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champ.id}.png`}
-                  alt="portrait du champion"
-                />
-                <p>{champ.id}</p>
-              </button>
-            );
-          }
-        })}
-      </div>
-
-      <div className="champion_fighter">
-        <h2>Fighter</h2>
-
-        {champions.map((champ, index) => {
-          if (champ.tags.includes("Fighter")) {
-            return (
-              <button key={index}>
-                <img
-                  src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champ.id}.png`}
-                  alt="portrait du champion"
-                />
-                <p>{champ.id}</p>
-              </button>
-            );
-          }
-        })}
-      </div>
-
-      <div className="champion_mage">
-        <h2>Mage</h2>
-
-        {champions.map((champ, index) => {
-          if (champ.tags.includes("Mage")) {
-            return (
-              <button key={index}>
-                <img
-                  src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champ.id}.png`}
-                  alt="portrait du champion"
-                />
-                <p>{champ.id}</p>
-              </button>
-            );
-          }
-        })}
-      </div>
-
-      <div className="champion_marksman">
-        <h2>Marskman</h2>
-
-        {champions.map((champ, index) => {
-          if (champ.tags.includes("Marksman")) {
-            return (
-              <button key={index}>
-                <img
-                  src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champ.id}.png`}
-                  alt="portrait du champion"
-                />
-                <p>{champ.id}</p>
-              </button>
-            );
-          }
-        })}
-      </div>
-
-      <div className="champion_support">
-        <h2>Support</h2>
-
-        {champions.map((champ, index) => {
-          if (champ.tags.includes("Support")) {
-            return (
-              <button key={index}>
-                <img
-                  src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champ.id}.png`}
-                  alt="portrait du champion"
-                />
-                <p>{champ.id}</p>
-              </button>
-            );
-          }
-        })}
-      </div>
-
-      <div className="champion_tank">
-        <h2>Tank</h2>
-
-        {champions.map((champ, index) => {
-          if (champ.tags.includes("Tank")) {
-            return (
-              <button key={index}>
-                <img
-                  src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champ.id}.png`}
-                  alt="portrait du champion"
-                />
-                <p>{champ.id}</p>
-              </button>
-            );
-          }
-        })}
-      </div>
+      {champions.map((champ, index) => {
+        if (champ.tags.includes(props.tags)) {
+          return (
+            <button key={index}>
+              <img
+                src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champ.id}.png`}
+                alt="portrait du champion"
+              />
+              <p>{champ.id}</p>
+            </button>
+          );
+        }
+      })}
     </>
   );
 }
+
+Characters.propTypes = {
+  tags: PropTypes.string.isRequired,
+};
 
 export default Characters;
