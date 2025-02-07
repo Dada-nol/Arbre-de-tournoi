@@ -1,6 +1,6 @@
-import Characters from "./characters";
+import Characters from "../characters";
 
-function Sort() {
+function SortByRole() {
   return (
     <>
       <div className="champion_assassin">
@@ -36,4 +36,4 @@ function Sort() {
   );
 }
 
-export default Sort;
+export default SortByRole;

@@ -59,19 +59,19 @@ function Characters(props) {
 
   return (
     <>
-      {champions.map((champ, index) => {
-        if (champ.tags.includes(props.tags)) {
-          return (
-            <button key={index}>
-              <img
-                src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champ.id}.png`}
-                alt="portrait du champion"
-              />
-              <p>{champ.id}</p>
-            </button>
-          );
-        }
-      })}
+      {champions
+        .filter((champ) =>
+          props.tags ? champ.tags.includes(props.tags) : true
+        )
+        .map((champ, index) => (
+          <button key={index}>
+            <img
+              src={`https://ddragon.leagueoflegends.com/cdn/${version}/img/champion/${champ.id}.png`}
+              alt="portrait du champion"
+            />
+            <p>{champ.id}</p>
+          </button>
+        ))}
     </>
   );
 }
